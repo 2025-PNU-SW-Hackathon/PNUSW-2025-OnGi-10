@@ -25,11 +25,13 @@ jobs:
       uses: gradle/actions/setup-gradle@v4
       with:
         build-root-directory: backend/ongi
-
+        
     - name: Create .env file from secrets
       shell: bash
       run: |
-        printf '%s\n' "${{ secrets.ENV_FILE }}" > backend/ongi/.env
+        cat <<'EOF' > backend/ongi/.env
+        ${{ secrets.ENV_FILE }}
+        EOF
 
     - name: Export .env as environment variables
       run: |
