@@ -1,4 +1,4 @@
-package com.ongi.ongi;
+package ongi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
