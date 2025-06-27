@@ -27,9 +27,9 @@ jobs:
         build-root-directory: backend/ongi
 
     - name: Create .env file from secrets
+      shell: bash
       run: |
-        echo "${{ secrets.ENV_FILE }}" > .env
-      working-directory: backend/ongi
+        printf '%s\n' "${{ secrets.ENV_FILE }}" > backend/ongi/.env
 
     - name: Export .env as environment variables
       run: |
