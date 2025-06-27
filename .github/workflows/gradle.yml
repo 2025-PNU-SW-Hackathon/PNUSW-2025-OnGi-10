@@ -31,6 +31,14 @@ jobs:
         echo "${{ secrets.ENV_FILE }}" > .env
       working-directory: backend/ongi
 
+    - name: Export .env as environment variables
+      run: |
+        set -a
+        source .env
+        set +a
+      working-directory: backend/ongi
+      shell: bash
+
     - name: Build with Gradle Wrapper
       run: ./gradlew build
       working-directory: backend/ongi
