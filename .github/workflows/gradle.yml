@@ -40,7 +40,7 @@ jobs:
         set -a
         source .env
         set +a
-        ./gradlew build
+        ./gradlew build --scan
 
   dependency-submission:
     runs-on: ubuntu-latest
