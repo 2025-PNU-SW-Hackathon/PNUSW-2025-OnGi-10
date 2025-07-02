@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import ongi.auth.token.entity.AccessToken;
 import ongi.auth.token.repository.AccessTokenRepository;
 import ongi.security.CustomUserDetails;
-import ongi.security.CustomUserDetailsService;
 import ongi.user.entity.User;
 import ongi.user.repository.UserRepository;
 import org.springframework.security.authentication.BadCredentialsException;

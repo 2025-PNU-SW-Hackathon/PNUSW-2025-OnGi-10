@@ -25,8 +25,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BadCredentialsException.class)
-    public ResponseEntity<ErrorResponse> handleBadCredential(
-            BadCredentialsException exception) {
+    public ResponseEntity<ErrorResponse> handleBadCredential() {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(new ErrorResponse(ErrorStatus.BAD_CREDENTIALS.getCode(),
                         ErrorStatus.BAD_CREDENTIALS.getDefaultMessage()));
@@ -34,8 +33,7 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<ErrorResponse> handleProductNotFound(
-            NoResourceFoundException exception) {
+    public ResponseEntity<ErrorResponse> handleProductNotFound() {
         return ResponseEntity.notFound().build();
     }
 
